@@ -21,10 +21,6 @@ for (const sit of allSits) {
         const totalSeat = convertedSeat - left;
 
         document.getElementById('left-seat').innerText = totalSeat;
-        // const seat = e.target.innerText
-        // const title = document.getElementById('title');
-        // title.innerText = seat;
-        // title see
         const div = document.getElementById('title-economy');
         const li = document.createElement('li')
         const seat = e.target.innerText
@@ -45,6 +41,15 @@ for (const sit of allSits) {
 
         const disable = e.target;
         disable.setAttribute('disabled', true);
+        
+        const limited = document.getElementById('seat-count').innerText
+        const convertedSit = parseInt(limited);
+        console.log(convertedSit);
+
+        if (convertedSit > 4) {
+            alert('you cannot buy more than four tickets');
+            return;
+        }
 
 
         const price = p3.innerText;
@@ -57,7 +62,7 @@ for (const sit of allSits) {
         totalCost.innerText = sum;
         const grandTotal = document.getElementById('grand-total');
         grandTotal.innerText = totalCost.innerText;
-        // console.log(grandTotal);
+
 
         const applyBtn = document.getElementById('apply-btn');
         applyBtn.addEventListener('click', function () {
@@ -67,7 +72,7 @@ for (const sit of allSits) {
 
             const convertedTotalCost = parseFloat(totalCost.innerText);
             const sit = parseFloat(sitTitle.innerText);
-            console.log(sit)
+            // console.log(sit);
             if (sit === 4) {
                 if (couponCode === 'new15') {
                     const discount = parseInt(convertedTotalCost) * .15;
@@ -77,7 +82,7 @@ for (const sit of allSits) {
                     const grandTotal = document.getElementById('grand-total');
                     grandTotal.innerText = totalAmount;
                     console.log(grandTotal);
-                    const couponInput =document.getElementById('label-hidden');
+                    const couponInput = document.getElementById('label-hidden');
                     couponInput.classList.add('hidden');
                 }
                 else if (couponCode === 'couple20') {
@@ -87,17 +92,16 @@ for (const sit of allSits) {
                     console.log(totalAmount)
                     const grandTotal = document.getElementById('grand-total');
                     grandTotal.innerText = totalAmount;
-                    // console.log(grandTotal);
-                    const couponInput =document.getElementById('label-hidden');
+                    const couponInput = document.getElementById('label-hidden');
                     couponInput.classList.add('hidden');
+                }
+                else {
+                    alert('invalid Coupon');
+                    return;
                 }
             }
             applyBtn.setAttribute('disabled', true);
         });
-        if(sit > 4){
-            alert('You cannot buy more than four tickets');
-            return;
-        }
     });
 };
 
