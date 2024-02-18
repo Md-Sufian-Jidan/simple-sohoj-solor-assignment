@@ -66,7 +66,8 @@ for (const sit of allSits) {
             const couponCode = couponElement.split(' ').join('').toLowerCase();
 
             const convertedTotalCost = parseFloat(totalCost.innerText);
-            const sit = parseFloat(sitTitle.innerText)
+            const sit = parseFloat(sitTitle.innerText);
+            console.log(sit)
             if (sit === 4) {
                 if (couponCode === 'new15') {
                     const discount = parseInt(convertedTotalCost) * .15;
@@ -76,6 +77,8 @@ for (const sit of allSits) {
                     const grandTotal = document.getElementById('grand-total');
                     grandTotal.innerText = totalAmount;
                     console.log(grandTotal);
+                    const couponInput =document.getElementById('label-hidden');
+                    couponInput.classList.add('hidden');
                 }
                 else if (couponCode === 'couple20') {
                     const discount = parseInt(convertedTotalCost) * .20;
@@ -85,10 +88,16 @@ for (const sit of allSits) {
                     const grandTotal = document.getElementById('grand-total');
                     grandTotal.innerText = totalAmount;
                     // console.log(grandTotal);
+                    const couponInput =document.getElementById('label-hidden');
+                    couponInput.classList.add('hidden');
                 }
             }
             applyBtn.setAttribute('disabled', true);
         });
+        if(sit > 4){
+            alert('You cannot buy more than four tickets');
+            return;
+        }
     });
 };
 
