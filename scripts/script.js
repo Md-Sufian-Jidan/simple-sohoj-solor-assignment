@@ -36,7 +36,9 @@ for(const sit of allSits){
         applyBtn.addEventListener('click', function(){
             
             const couponElement = document.getElementById('coupon-input').value;
-            const couponCode = couponElement.split(' ').join('').toLowerCase();            
+            const couponCode = couponElement.split(' ').join('').toLowerCase();
+            // console.log(couponCode);
+            
             const convertedTotalCost = parseFloat(totalCost.innerText);
             const sit = parseFloat(sitTitle.innerText)
             if(sit === 4){
@@ -47,12 +49,15 @@ for(const sit of allSits){
                     console.log(totalAmount)
                     const grandTotal = document.getElementById('grand-total');
                     grandTotal.innerText = totalAmount;
-                    console.log(grandTotal)
+                    // console.log(grandTotal);
                 }
             }
-            alert('please buy at least four tickets to get the coupon')
-        applyBtn.setAttribute('disabled', true);
-
+            alert('please buy at least four tickets to get the coupon');
+            applyBtn.setAttribute('disabled', true);
         })
     })
 }
+// const next = document.getElementById('next');
+// function modal(elementId){
+//     const element = document.getElementById(elementId)
+// }
