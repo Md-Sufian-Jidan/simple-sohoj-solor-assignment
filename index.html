@@ -48,7 +48,7 @@
             <h3 class="lg:text-6xl text-center text-white">End-to-End Travel with <br><span class="text-[#1DD100] my-2">JJ Paribahan</span></h3>
             <p class="text-white lg:mx-[250px] mx-12 my-10">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p>
             <div class="text-center">
-                <button class="btn text-black border-none bg-[#1DD100] mx-auto mt-2">Buy Tickets</button>
+                <button onclick="scrollWin()" class="btn text-black border-none bg-[#1DD100] mx-auto mt-2">Buy Tickets</button>
             </div>
         </div>
     </header>
@@ -92,7 +92,7 @@
                 <p class="my-4">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p>
                </div>
             <div>
-               <div class="flex bg-[#ffffff] lg:mx-16 rounded-xl">
+               <div class="flex bg-[#ffffff] lg:mx-16 ">
             <div class="lg:mx-[100px] p-7">
                 <div class="flex gap-3 items-center justify-center">
                     <div class="flex">
@@ -133,7 +133,7 @@
         </section>
         <section class=" p-10 bg-[#ffffff] flex justify-between lg:mx-[134px] rounded-2xl">
             <div class=" p-10">
-                <h3>Select Your Seat</h3>
+                <h3 class="text-2xl font-bold my-5">Select Your Seat</h3>
                 <hr>
                 <div class="flex justify-between">
                     <div class="flex"><img src="images/seat-gray.png" alt=""><span>Available</span></div>
@@ -141,8 +141,7 @@
                         <img src="images/seat-green.png" alt=""><span>Selected</span>
                     </div>
                 </div>
-                <p><img src="images/stoppage.png" alt=""></p>
-                <div class="grid grid-cols-5 grid-rows-10 items-center gap-5">
+                <div class="grid grid-cols-5 grid-rows-10 items-center gap-5 my-5">
                         <p class="text-center">A</p>
                         <button class="btn w-[100px] seat-no">A1</button><button class="btn w-[100px] seat-no">A2</button><button class="btn w-[100px] seat-no">A3</button><button class="btn w-[100px] seat-no">A4</button>
                         <p class="text-center">B</p>
@@ -195,8 +194,8 @@
                     <p class="font-bold">BDT<span class="font-bold" id="total-cost"></span></p>
                 </div>
                 <label class="input input-bordered flex items-center gap-2 my-5">
-                    <input id="coupon-input" type="text" class="grow" placeholder="Have any coupon?" />
-                    <button id="apply-btn" class="bg-[#1dd100] p-2 rounded-lg">Apply</button>
+                    <input id="coupon-input" type="text" class="grow" placeholder="Have any coupon?"/>
+                    <button id="apply-btn" class="bg-[#1dd100] p-2 rounded-lg" disabled>Apply</button>
                   </label>
                   <div class="flex justify-between">
                     <p class="font-bold">GrandTotal</p>
@@ -209,21 +208,21 @@
                     <div class="label mt-5">
                       <span class="label-text font-bold text-2xl my-5">Passenger Name*</span>
                     </div>
-                    <input type="text" placeholder="Enter Your Name" class="input input-bordered w-full max-w-xs" />
+                    <input type="text" placeholder="Enter Your Name" class="input input-bordered w-full max-w-xs required"/>
                   </label>
                 <label class="form-control w-full max-w-xs">
                     <div class="label mt-5">
                       <span class="label-text font-bold text-2xl my-5">Phone Number*</span>
                     </div>
-                    <input type="number" placeholder="Enter Your Phone Number" class="input input-bordered w-full max-w-xs" />
+                    <input type="number" placeholder="Enter Your Phone Number" class="input input-bordered w-full max-w-xs required"/>
                   </label>
                   <label class="form-control w-full max-w-xs">
                     <div class="label mt5">
                       <span class="label-text font-bold text-2xl my-5">Enter Your Email</span>
                     </div>
-                    <input type="email" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
+                    <input type="email" placeholder="Type here" class="input input-bordered w-full max-w-xs required"/>
                   </label>
-                  <button onclick="my_modal_1.showModal()" class="btn w-11/12 my-10 bg-[#1dd100] text-white rounded-2xl">Next</button>
+                  <button type="submit" onclick="my_modal_1.showModal()" class="btn w-11/12 my-10 bg-[#1dd100] text-white rounded-2xl" id="next">Next</button>
             </div>
             <div class="flex justify-between">
                 <p><u>Terms and Conditions</u></p>
