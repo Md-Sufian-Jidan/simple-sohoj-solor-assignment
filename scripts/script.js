@@ -30,11 +30,22 @@ for(const sit of allSits){
         const totalCost = document.getElementById('total-cost');
         sum = sum + convertedPrice ;
         totalCost.innerText = sum;
+        const couponCode = document.getElementById('coupon-code').innerText
+
+
+
+
+        if(sitTitle === 4){
+            if(couponCode === 'new15'){
+            const discount = totalCost *.15;
+            }
+        }
         const grandTotal = document.getElementById('grand-total');
         grandTotal.innerText = totalCost.innerText;
+        
     })
 }
-const next = document.getElementById('next');
+// const next = document.getElementById('next');
 // function modal(elementId){
 //     const element = document.getElementById(elementId)
 // }
