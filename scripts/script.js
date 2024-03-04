@@ -13,6 +13,16 @@ const allSits = document.querySelectorAll('.seat-no');
 for (const sit of allSits) {
 
     sit.addEventListener('click', function (e) {
+
+        const btn = document.getElementById('seat-count').innerText;
+        const convertedBtn = parseFloat(btn)
+        console.log(convertedBtn);
+
+        if (convertedBtn > 3) {
+            alert('you cannot buy more than four tickets');
+            return;
+        };
+
         const sitTitle = document.getElementById('seat-count');
         sitTitle.innerText = count++;
 
@@ -23,6 +33,7 @@ for (const sit of allSits) {
         document.getElementById('left-seat').innerText = totalSeat;
         const div = document.getElementById('title-economy');
         const li = document.createElement('li')
+        li.classList = ('li');
         const seat = e.target.innerText
 
         const p = document.createElement('p')
@@ -41,16 +52,10 @@ for (const sit of allSits) {
 
         const disable = e.target;
         disable.setAttribute('disabled', true);
-        
+
         const limited = document.getElementById('seat-count').innerText
         const convertedSit = parseInt(limited);
         console.log(convertedSit);
-
-        if (convertedSit > 4) {
-            alert('you cannot buy more than four tickets');
-            return;
-        }
-
 
         const price = p3.innerText;
         // console.log(price);
@@ -95,11 +100,11 @@ for (const sit of allSits) {
                     const couponInput = document.getElementById('label-hidden');
                     couponInput.classList.add('hidden');
                 }
-                else {
-                    alert('invalid Coupon');
-                    return;
-                }
             }
+            else if(couponCode !== 'new15' && couponCode !== 'couple20') {
+                alert('invalid Coupon');
+                // return;
+            };
             applyBtn.setAttribute('disabled', true);
         });
     });
